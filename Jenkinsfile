@@ -41,7 +41,7 @@ pipeline {
   post {
     always {
       echo "calling the publisher pipeline..."
-      // browserStackReportPublisher("this is the value of some value")
+      browserStackReportPublisher("this is the value of some value")
     }
   }
 }
