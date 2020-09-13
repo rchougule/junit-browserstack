@@ -7,6 +7,7 @@ pipeline {
         echo "building now. will call browseratck..."
         browserstack(credentialsId: '2f42b03a-97dd-41e2-83a8-549718172d92') {
           echo "called browserstack. inside the callback..."
+          browserStackReportPublisher("this is the value of some value")
         }
         echo "now again outside..."
       }
@@ -28,7 +29,7 @@ pipeline {
   post {
     always {
       echo "calling the publisher pipeline..."
-      browserStackReportPublisher("this is the value of some value")
+      // browserStackReportPublisher("this is the value of some value")
     }
   }
 }
