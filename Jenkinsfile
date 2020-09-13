@@ -6,22 +6,19 @@ pipeline {
       steps {
         
         echo "building now. will call browseratck..."
-        browserstack(credentialsId: '595ec76a-e0a7-4871-ad65-5027a59a1171') {
+        browserstack(credentialsId: 'e8a4ff63-716f-413d-a70d-5b8665c9b8e2') {
           echo "called browserstack. inside the callback..."
           // browserStackReportPublisher("this is the value of some value")
           echo "BROWSERSTACK_LOCAL value inside browserstack: ${BROWSERSTACK_LOCAL}"
 
         }
 
-        echo "uploading the app first"
+        // echo "uploading the app first"
 
-        browserstackAppUploader('/Users/chaugs_rohan/Downloads/Instagram_v157.0.0.37.120_apkpure.com.apk') {
-            // some block
-            echo "BROWSERSTACK_APP_ID: ${BROWSERSTACK_APP_ID}"
-        }
-
-        echo "now again outside..."
-        // echo "BROWSERSTACK_APP_ID again: ${BROWSERSTACK_APP_ID}"
+        // browserstackAppUploader('/Users/chaugs_rohan/Downloads/Instagram_v157.0.0.37.120_apkpure.com.apk') {
+        //     // some block
+        //     echo "BROWSERSTACK_APP_ID: ${BROWSERSTACK_APP_ID}"
+        // }
       }
     }
 
