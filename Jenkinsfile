@@ -38,7 +38,7 @@ pipeline {
   post {
     always {
       echo "calling the publisher pipeline..."
-      browserStackReportPublisher()
+      browserStackReportPublisher("automate")
     }
   }
 }
