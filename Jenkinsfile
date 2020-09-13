@@ -21,7 +21,7 @@ pipeline {
         }
 
         echo "now again outside..."
-        echo "BROWSERSTACK_APP_ID again: ${BROWSERSTACK_APP_ID}"
+        // echo "BROWSERSTACK_APP_ID again: ${BROWSERSTACK_APP_ID}"
       }
     }
 
