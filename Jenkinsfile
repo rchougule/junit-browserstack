@@ -23,23 +23,23 @@ pipeline {
       }
     }
 
-    stage("test") {
-      steps {
-        echo "testing now..."
-      }
-    }
+    // stage("test") {
+    //   steps {
+    //     echo "testing now..."
+    //   }
+    // }
 
-    stage("deploy") {
-      steps {
-        echo "deploying now..."
-      }
-    }
+    // stage("deploy") {
+    //   steps {
+    //     echo "deploying now..."
+    //   }
+    // }
   }
 
-  post {
-    always {
-      echo "calling the publisher pipeline..."
-      // browserStackReportPublisher "app-automate"
-    }
-  }
+  // post {
+  //   always {
+  //     echo "calling the publisher pipeline..."
+  //     // browserStackReportPublisher "app-automate"
+  //   }
+  // }
 }
