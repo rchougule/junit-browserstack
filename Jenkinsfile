@@ -6,10 +6,11 @@ pipeline {
       steps {
         
         echo "building now. will call browseratck..."
-        browserstack(credentialsId: 'e8a4ff63-716f-413d-a70d-5b8665c9b8e2') {
+        browserstack(credentialsId: 'e620e0e1-e1f5-48a3-9775-7dbec8cd3322	') {
           echo "called browserstack. inside the callback..."
           // browserStackReportPublisher("this is the value of some value")
           echo "BROWSERSTACK_LOCAL value inside browserstack: ${BROWSERSTACK_LOCAL}"
+          // BROWSERSTCK_BUILD_NAME = BUILD_TAG
 
         }
 
@@ -38,7 +39,7 @@ pipeline {
   post {
     always {
       echo "calling the publisher pipeline..."
-      browserStackReportPublisher("automate")
+      browserStackReportPublisher "app-automate"
     }
   }
 }
