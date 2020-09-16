@@ -6,7 +6,7 @@ pipeline {
       steps {
         
         echo "building now. will call browseratck..."
-        browserstack(credentialsId: 'e620e0e1-e1f5-48a3-9775-7dbec8cd3322	') {
+        browserstack(credentialsId: '256b221a-3780-4fae-b2f9-29c732bd44a2') {
           echo "called browserstack. inside the callback..."
           // browserStackReportPublisher("this is the value of some value")
           echo "BROWSERSTACK_LOCAL value inside browserstack: ${BROWSERSTACK_LOCAL}"
@@ -23,23 +23,23 @@ pipeline {
       }
     }
 
-    // stage("test") {
-    //   steps {
-    //     echo "testing now..."
-    //   }
-    // }
+    stage("test") {
+      steps {
+        echo "testing now..."
+      }
+    }
 
-    // stage("deploy") {
-    //   steps {
-    //     echo "deploying now..."
-    //   }
-    // }
+    stage("deploy") {
+      steps {
+        echo "deploying now..."
+      }
+    }
   }
 
-  // post {
-  //   always {
-  //     echo "calling the publisher pipeline..."
-  //     // browserStackReportPublisher "app-automate"
-  //   }
-  // }
+  post {
+    always {
+      echo "calling the publisher pipeline..."
+      browserStackReportPublisher "automate"
+    }
+  }
 }
